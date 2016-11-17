@@ -7,7 +7,7 @@ class SeedDump
       mongo = env['MONGO'] == 'true'
 
       if mongo
-        tables = Mongoid.default_session.collections
+        tables = Mongoid.default_client.collections
         mong = ""
         tables.each do |table|
           mong = mong + table.name + ","
